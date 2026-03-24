@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "Modern server room with blue lighting",
+      "imageUrl": "https://picsum.photos/seed/icsa1/1200/600",
+      "imageHint": "server room technology"
+    },
+    {
+      "id": "project-cabling",
+      "description": "Professional structured cabling installation",
+      "imageUrl": "https://picsum.photos/seed/icsa2/800/600",
+      "imageHint": "network cabling"
+    },
+    {
+      "id": "project-security",
+      "description": "CCTV camera installation in a modern building",
+      "imageUrl": "https://picsum.photos/seed/icsa3/800/600",
+      "imageHint": "cctv security"
+    },
+    {
+      "id": "project-electrical",
+      "description": "Electrical panel and industrial power distribution",
+      "imageUrl": "https://picsum.photos/seed/icsa4/800/600",
+      "imageHint": "electrical engineering"
+    },
+    {
+      "id": "project-datacenter",
+      "description": "Implementation of IT infrastructure in a data center",
+      "imageUrl": "https://picsum.photos/seed/icsa5/800/600",
+      "imageHint": "data center"
+    },
+    {
+      "id": "about-team",
+      "description": "Engineers working on a project plan",
+      "imageUrl": "https://picsum.photos/seed/icsa6/1000/600",
+      "imageHint": "engineering team"
+    }
+  ]
 }
