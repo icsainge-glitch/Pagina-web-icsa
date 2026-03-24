@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent } from '@/components/ui/card';
-import { Target, Eye, Shield, Users, Award, Clock } from 'lucide-react';
+import { Target, Eye, Shield, Users, Award, Clock, Zap } from 'lucide-react';
 
 export default function AboutPage() {
   const aboutImg = PlaceHolderImages.find(img => img.id === 'about-team');

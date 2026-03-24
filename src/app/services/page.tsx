@@ -1,117 +1,50 @@
 
-import { 
-  Network, 
-  ShieldCheck, 
-  Zap, 
-  Server, 
-  Search, 
-  Activity, 
-  Settings, 
-  Rss, 
-  CheckCircle, 
-  FileBox, 
-  ShoppingBag 
-} from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-
-const services = [
-  {
-    title: 'Ingeniería de Proyectos de Comunicaciones',
-    description: 'Diseño conceptual y detallado de sistemas de comunicación corporativos e industriales.',
-    icon: Network,
-    category: 'Ingeniería'
-  },
-  {
-    title: 'Instalación de Seguridad y CCTV',
-    description: 'Sistemas de videovigilancia de alta definición, control de acceso y monitoreo inteligente.',
-    icon: ShieldCheck,
-    category: 'Seguridad'
-  },
-  {
-    title: 'Estudios de Instalaciones Eléctricas',
-    description: 'Análisis profundo de cargas, consumos y cumplimiento de normativas vigentes.',
-    icon: Search,
-    category: 'Eléctrica'
-  },
-  {
-    title: 'Redes de Corrientes Débiles',
-    description: 'Estudios e implementación de sistemas de telefonía, citofonía y redes de datos.',
-    icon: Activity,
-    category: 'Ingeniería'
-  },
-  {
-    title: 'Planificación y Diseño de Redes',
-    description: 'Estructuración estratégica de la topología de red para máxima eficiencia y escalabilidad.',
-    icon: Settings,
-    category: 'Datos'
-  },
-  {
-    title: 'Análisis de Redes (LAN y WAN)',
-    description: 'Diagnóstico de rendimiento, optimización de tráfico y solución de cuellos de botella.',
-    icon: Search,
-    category: 'Datos'
-  },
-  {
-    title: 'Infraestructura Tecnológica',
-    description: 'Montaje integral de salas de servidores (Data Centers), racks, sistemas UPS y climatización.',
-    icon: Server,
-    category: 'Infraestructura'
-  },
-  {
-    title: 'Cableado Estructurado',
-    description: 'Instalaciones profesionales de UTP (Cat 6/6A) y Fibra Óptica para enlaces troncales.',
-    icon: Rss,
-    category: 'Infraestructura'
-  },
-  {
-    title: 'Certificación de Redes',
-    description: 'Pruebas rigurosas para garantizar que su red cumple con los estándares internacionales de calidad.',
-    icon: CheckCircle,
-    category: 'Calidad'
-  },
-  {
-    title: 'Diseño de Proyectos Eléctricos',
-    description: 'Cálculo de tableros, alimentadores y sistemas de iluminación para diversos entornos.',
-    icon: FileBox,
-    category: 'Eléctrica'
-  },
-  {
-    title: 'Suministro de Equipos',
-    description: 'Provisión de switches, routers, accesorios de red y componentes de comunicación de marcas líderes.',
-    icon: ShoppingBag,
-    category: 'Suministros'
-  }
-];
+import { Card, CardContent } from '@/components/ui/card';
+import { servicesData } from '@/lib/data/services';
+import Link from 'next/link';
+import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
 
 export default function ServicesPage() {
   return (
-    <div className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <header className="max-w-3xl mb-16">
-          <h1 className="text-4xl font-headline font-bold text-primary mb-6">Nuestros Servicios</h1>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            En ICSA Ingeniería S.A., combinamos experiencia técnica con tecnología de punta para ofrecer soluciones robustas y confiables en telecomunicaciones y electricidad.
+    <div className="py-32 bg-zinc-50/50 min-h-screen">
+      <div className="container mx-auto px-6 md:px-12 relative z-10">
+        <header className="max-w-3xl mb-24 text-center mx-auto">
+          <h2 className="text-sm tracking-[0.2em] font-semibold text-primary uppercase mb-4">Catálogo Integral</h2>
+          <h1 className="text-4xl md:text-6xl font-headline font-light text-foreground mb-6 tracking-tight leading-tight">
+            Nuestros <span className="font-semibold text-primary">Servicios</span>
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
+            Soluciones robustas y confiables para el sector corporativo e industrial, garantizando excelencia operativa en cada etapa.
           </p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card key={index} className="flex flex-col h-full border-none shadow-sm hover:shadow-md transition-shadow group">
-              <CardHeader className="flex flex-row items-center gap-4">
-                <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                  <service.icon className="h-6 w-6" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {servicesData.map((service) => (
+            <Link href={`/services/${service.slug}`} key={service.slug} className="group block focus:outline-none focus:ring-2 focus:ring-accent rounded-2xl outline-none">
+              <Card className="border border-black/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 bg-white overflow-hidden rounded-2xl flex flex-col h-full relative group">
+                <div className="relative h-56 overflow-hidden bg-slate-100">
+                  <Image 
+                    src={service.headerImage} 
+                    alt={service.title} 
+                    fill 
+                    className="object-cover transition-transform duration-700 group-hover:scale-105" 
+                  />
                 </div>
-                <div className="space-y-1">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-accent">{service.category}</span>
-                  <CardTitle className="text-lg leading-tight">{service.title}</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {service.description}
-                </p>
-              </CardContent>
-            </Card>
+                <CardContent className="p-8 flex flex-col flex-grow bg-white">
+                   <div className="mb-6 inline-flex p-3 rounded-xl bg-primary/5 text-primary">
+                      <service.icon className="h-6 w-6" />
+                   </div>
+                   <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">{service.title}</h3>
+                   <p className="text-muted-foreground leading-relaxed text-sm font-light mb-8 line-clamp-3">
+                     {service.description}
+                   </p>
+                   <div className="mt-auto flex items-center gap-2 text-sm font-semibold text-primary uppercase tracking-widest">
+                      Explorar detalle <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                   </div>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>

@@ -1,6 +1,7 @@
 
 import Link from 'next/link';
 import { Shield, Phone, Mail, MapPin, Linkedin, Facebook, Twitter } from 'lucide-react';
+import { Logo } from '@/components/ui/logo';
 
 export default function Footer() {
   return (
@@ -8,11 +9,8 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2">
-              <Shield className="h-6 w-6 text-primary" />
-              <span className="font-headline font-bold text-lg tracking-tight text-primary">
-                ICSA <span className="text-accent">Solutions</span>
-              </span>
+            <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
+              <Logo />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Líderes en ingeniería de comunicaciones y sistemas de seguridad. Innovación y confianza para tu infraestructura tecnológica.

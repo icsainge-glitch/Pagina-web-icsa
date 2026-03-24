@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import { Shield, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { Logo } from '@/components/ui/logo';
 
 const navLinks = [
   { href: '/', label: 'Inicio' },
@@ -24,11 +25,8 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <Shield className="h-8 w-8 text-primary" />
-          <span className="font-headline font-bold text-xl tracking-tight text-primary">
-            ICSA <span className="text-accent">Solutions</span>
-          </span>
+        <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
+          <Logo />
         </Link>
 
         {/* Desktop Nav */}
