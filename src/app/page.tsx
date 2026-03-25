@@ -16,7 +16,8 @@ import {
   Phone,
   Mail,
   MapPin,
-  Clock
+  Clock,
+  CheckCircle
 } from 'lucide-react';
 import { useReveal } from '@/hooks/use-reveal';
 import { cn } from '@/lib/utils';
@@ -25,6 +26,7 @@ import { servicesData } from '@/lib/data/services';
 export default function Home() {
   const [heroRef, heroVisible] = useReveal({ threshold: 0.1 });
   const [servicesRef, servicesVisible] = useReveal({ threshold: 0.1 });
+  const [aboutRef, aboutVisible] = useReveal({ threshold: 0.1 });
   const [metricsRef, metricsVisible] = useReveal({ threshold: 0.1 });
   const [valueRef, valueVisible] = useReveal({ threshold: 0.1 });
   const [clientsRef, clientsVisible] = useReveal({ threshold: 0.1 });
@@ -101,6 +103,61 @@ export default function Home() {
                 </Card>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Corporate Identity / Company Presence */}
+      <section ref={aboutRef} className="py-24 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-6 md:px-12 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+            
+            <div className={cn(
+              "flex-1 relative h-[450px] lg:h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl reveal-base reveal-left",
+              aboutVisible && "reveal-visible"
+            )}>
+              <div className="absolute inset-0 bg-primary/20 mix-blend-multiply z-10 transition-opacity duration-500 hover:opacity-0 group"></div>
+              <video 
+                src="https://raw.githubusercontent.com/icsainge-glitch/Imagenes-pagina-web/main/Animaci%C3%B3n_de_Imagen_Sin_Acercamiento.mp4" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover object-[80%_center]" 
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-8 md:p-12 z-20">
+                <div className="text-white border-l-4 border-accent pl-6">
+                  <p className="font-bold text-2xl md:text-3xl lg:text-4xl mb-2 drop-shadow-md">Ingeniería en Comunicaciones S.A.</p>
+                  <p className="text-white/80 font-medium tracking-wide text-lg">La columna vertebral de la industria</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className={cn(
+              "flex-1 space-y-10 reveal-base reveal-right",
+              aboutVisible && "reveal-visible"
+            )}>
+              <div>
+                <h2 className="text-sm tracking-[0.2em] font-semibold text-primary uppercase mb-4">Identidad Corporativa</h2>
+                <h3 className="text-3xl md:text-5xl lg:text-6xl font-headline font-light text-foreground tracking-tight leading-tight text-balance">
+                  El motor tecnológico del <span className="font-semibold text-primary">quehacer nacional</span>.
+                </h3>
+              </div>
+              
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
+                En <strong className="font-medium text-foreground">Ingeniería en Comunicaciones S.A.</strong> somos los arquitectos de su continuidad operativa. Desplegamos equipos para diseñar, certificar y mantener operativas sus instalaciones tecnológicas críticas, asegurando que su negocio no se detenga jamás.
+              </p>
+              
+              <div className="grid sm:grid-cols-2 gap-8 pt-8 border-t border-black/5">
+                 <div>
+                    <h4 className="font-bold text-lg text-foreground flex items-center gap-3"><CheckCircle className="h-6 w-6 text-accent shrink-0"/> Ingeniería Certificada</h4>
+                 </div>
+                 <div>
+                    <h4 className="font-bold text-lg text-foreground flex items-center gap-3"><CheckCircle className="h-6 w-6 text-primary shrink-0"/> Logística Operativa</h4>
+                 </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -201,10 +258,13 @@ export default function Home() {
           "container mx-auto px-6 md:px-12 text-center reveal-base reveal-up",
           clientsVisible && "reveal-visible"
         )}>
-           <h3 className="text-sm tracking-[0.2em] uppercase font-semibold text-muted-foreground mb-16">
-             Empresas e industrias que confían en nuestra infraestructura
-           </h3>
-           <div className="relative flex overflow-x-hidden w-full group">
+           <div className="max-w-3xl mx-auto mb-16 text-center">
+             <h2 className="text-sm tracking-[0.2em] font-semibold text-primary uppercase mb-4">Confianza Corporativa</h2>
+             <h3 className="text-3xl md:text-5xl font-light text-foreground tracking-tight leading-tight text-balance">
+               Empresas e industrias que respaldan nuestra <span className="font-semibold text-primary">experiencia</span>
+             </h3>
+           </div>
+           <div className="relative flex overflow-hidden w-full group py-8">
              <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-zinc-50 to-transparent z-10"></div>
              <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-zinc-50 to-transparent z-10"></div>
              
@@ -217,8 +277,8 @@ export default function Home() {
                  <div className="w-[160px] h-20 relative flex-shrink-0">
                     <Image src="/clients/client2.png" alt="Trendy" fill className="object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
                  </div>
-                 <div className="w-[160px] h-20 relative flex-shrink-0">
-                    <Image src="/clients/client3.jpg" alt="Inalco" fill className="object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mix-blend-multiply" />
+                 <div className="w-[200px] h-20 relative flex-shrink-0">
+                    <Image src="/clients/client3.jpg" alt="Inalco" fill className="object-contain scale-[1.4] filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mix-blend-multiply" />
                  </div>
                  <div className="w-[160px] h-20 relative flex-shrink-0">
                     <Image src="/clients/client4.png" alt="Demaria" fill className="object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
@@ -236,8 +296,8 @@ export default function Home() {
                  <div className="w-[160px] h-20 relative flex-shrink-0">
                     <Image src="/clients/client2.png" alt="Trendy" fill className="object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
                  </div>
-                 <div className="w-[160px] h-20 relative flex-shrink-0">
-                    <Image src="/clients/client3.jpg" alt="Inalco" fill className="object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mix-blend-multiply" />
+                 <div className="w-[200px] h-20 relative flex-shrink-0">
+                    <Image src="/clients/client3.jpg" alt="Inalco" fill className="object-contain scale-[1.4] filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mix-blend-multiply" />
                  </div>
                  <div className="w-[160px] h-20 relative flex-shrink-0">
                     <Image src="/clients/client4.png" alt="Demaria" fill className="object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
@@ -276,8 +336,8 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Oficina Central</h4>
-                    <p className="text-sm text-muted-foreground font-light">Av. Principal 1234, Of 501</p>
-                    <p className="text-sm text-muted-foreground font-light">Santiago, Chile</p>
+                    <p className="text-sm text-muted-foreground font-light">Abel González 324.</p>
+                    <p className="text-sm text-muted-foreground font-light">La Cisterna Santiago, Chile</p>
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
@@ -306,8 +366,8 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Horario</h4>
-                    <p className="text-sm text-muted-foreground font-light">Lun a Vie</p>
-                    <p className="text-sm text-muted-foreground font-light">09:00 - 18:30 hrs</p>
+                    <p className="text-sm text-muted-foreground font-light">Lun a Vie: 08:00 - 17:00</p>
+                    <p className="text-sm text-muted-foreground font-light">Sábado: 08:00 - 12:00</p>
                   </div>
                 </div>
               </div>

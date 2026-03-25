@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const HERO_IMAGES = [
-  '/hero-icsa-server.jpg?v=4',
+  '/hero-industrial.png?v=5',
   '/hero-icsa-office.jpg?v=4',
   '/hero-icsa-circuit.jpg?v=4'
 ];
@@ -26,7 +26,7 @@ export function HeroCarousel() {
           src={src}
           alt={`Fondo Hero ${index + 1}`}
           fill
-          className={`object-cover brightness-[0.3] transition-all duration-1000 ease-in-out ${
+          className={`object-cover brightness-[0.5] transition-all duration-1000 ease-in-out ${
             index === currentIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
           }`}
           priority={index === 0}

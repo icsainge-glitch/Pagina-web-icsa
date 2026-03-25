@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import { servicesData } from '@/lib/data/services';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export function generateStaticParams() {
@@ -58,6 +58,22 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             <p className="text-muted-foreground leading-relaxed text-lg">
               {service.detailedDescription}
             </p>
+            {service.features && service.features.length > 0 && (
+              <>
+                <div className="h-px w-full bg-border my-8" />
+                <h3 className="text-2xl font-bold text-foreground mb-6">Características Principales</h3>
+                <ul className="space-y-4">
+                  {service.features.map((feature: string, index: number) => (
+                    <li key={index} className="flex items-start gap-4">
+                      <div className="mt-1 p-1 rounded-full bg-primary/10 text-primary shrink-0">
+                        <CheckCircle className="h-5 w-5" />
+                      </div>
+                      <span className="text-muted-foreground leading-relaxed text-lg">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
           </div>
           
           <div className="pt-8 text-center md:text-left">

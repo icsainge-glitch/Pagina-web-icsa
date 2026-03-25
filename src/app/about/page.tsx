@@ -43,8 +43,8 @@ export default function AboutPage() {
                     <Award className="h-6 w-6" />
                   </div>
                   <div>
-                    <p className="font-bold">Calidad ISO</p>
-                    <p className="text-xs text-muted-foreground">Estándares globales</p>
+                    <p className="font-bold">Calidad</p>
+                    <p className="text-xs text-muted-foreground">Trabajo de calidad garantizado</p>
                   </div>
                 </div>
               </div>
@@ -63,34 +63,54 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section ref={visionRef} className="py-24 bg-secondary/30 relative overflow-hidden">
+      <section ref={visionRef} className="py-24 bg-zinc-50 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 transform origin-top translate-x-1/2"></div>
         <div className={cn(
-          "container mx-auto px-4 relative z-10 reveal-base reveal-up",
+          "container mx-auto px-6 md:px-12 relative z-10 reveal-base reveal-up",
           visionVisible && "reveal-visible"
         )}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <Card className="border-none shadow-xl bg-primary text-white p-4 hover-lift">
-              <CardContent className="pt-8 space-y-6">
-                <div className="h-14 w-14 rounded-full bg-accent flex items-center justify-center mb-4">
-                  <Target className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold">Misión</h3>
-                <p className="text-white/80 leading-relaxed text-balance">
-                  Proveer soluciones integrales de ingeniería eléctrica y de comunicaciones que superen las expectativas de nuestros clientes, garantizando la continuidad de sus procesos mediante tecnología innovadora y un servicio de excelencia técnica.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-none shadow-xl p-4 hover-lift bg-white">
-              <CardContent className="pt-8 space-y-6">
-                <div className="h-14 w-14 rounded-full bg-primary flex items-center justify-center mb-4 text-white">
-                  <Eye className="h-8 w-8" />
-                </div>
-                <h3 className="text-2xl font-bold text-primary">Visión</h3>
-                <p className="text-muted-foreground leading-relaxed text-balance">
-                  Ser reconocidos como la empresa líder en el cono sur en el desarrollo de infraestructuras tecnológicas seguras e inteligentes, siendo referentes en innovación y confiabilidad para la industria 4.0.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
+            <div className="group relative">
+               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+               <Card className="relative border-none shadow-none bg-primary text-white p-8 md:p-12 rounded-3xl h-full flex flex-col justify-between overflow-hidden">
+                  <div className="absolute top-0 right-0 p-8 opacity-10">
+                     <Target className="h-32 w-32" />
+                  </div>
+                  <CardContent className="p-0 space-y-8 relative z-10">
+                    <div className="inline-flex h-16 w-16 rounded-2xl bg-white/10 backdrop-blur-sm items-center justify-center border border-white/20">
+                      <Target className="h-8 w-8 text-accent" />
+                    </div>
+                    <div>
+                       <h3 className="text-sm tracking-[0.2em] font-semibold text-accent uppercase mb-2">Nuestro Motor</h3>
+                       <h4 className="text-3xl md:text-4xl font-headline font-semibold">Misión</h4>
+                    </div>
+                    <p className="text-lg text-white/80 leading-relaxed font-light text-balance">
+                      Proveer soluciones integrales de ingeniería eléctrica y de comunicaciones que superen las expectativas de nuestros clientes, garantizando la continuidad de sus procesos mediante tecnología innovadora y un servicio de excelencia técnica.
+                    </p>
+                  </CardContent>
+               </Card>
+            </div>
+
+            <div className="group relative">
+               <div className="absolute -inset-1 bg-gradient-to-r from-zinc-200 to-zinc-100 rounded-3xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+               <Card className="relative border border-primary/5 shadow-2xl p-8 md:p-12 rounded-3xl h-full flex flex-col justify-between bg-white overflow-hidden">
+                  <div className="absolute top-0 right-0 p-8 opacity-5">
+                     <Eye className="h-32 w-32" />
+                  </div>
+                  <CardContent className="p-0 space-y-8 relative z-10">
+                    <div className="inline-flex h-16 w-16 rounded-2xl bg-primary/5 items-center justify-center border border-primary/10">
+                      <Eye className="h-8 w-8 text-primary" />
+                    </div>
+                    <div>
+                       <h3 className="text-sm tracking-[0.2em] font-semibold text-primary/60 uppercase mb-2">Nuestro Norte</h3>
+                       <h4 className="text-3xl md:text-4xl font-headline font-semibold text-primary">Visión</h4>
+                    </div>
+                    <p className="text-lg text-muted-foreground leading-relaxed font-light text-balance">
+                      Ser reconocidos como la empresa líder en el cono sur en el desarrollo de infraestructuras tecnológicas seguras e inteligentes, siendo referentes en innovación y confiabilidad para la industria 4.0.
+                    </p>
+                  </CardContent>
+               </Card>
+            </div>
           </div>
         </div>
       </section>
