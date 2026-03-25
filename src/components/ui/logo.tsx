@@ -17,8 +17,8 @@ export function Logo({ className = "" }: { className?: string }) {
         </text>
       </svg>
       <div className="flex flex-col">
-        <span className="font-bold text-lg leading-tight tracking-tight text-foreground">ICSA</span>
-        <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider leading-none">Ingeniería S.A.</span>
+        <span className="text-[11px] text-foreground font-bold uppercase tracking-widest leading-none mb-0.5">Ingeniería</span>
+        <span className="text-[9px] text-muted-foreground font-semibold uppercase tracking-wider leading-none">en Comunicaciones S.A.</span>
       </div>
     </div>
   );

@@ -1,15 +1,25 @@
+'use client';
 
 import { Card, CardContent } from '@/components/ui/card';
 import { servicesData } from '@/lib/data/services';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
+import { useReveal } from '@/hooks/use-reveal';
+import { cn } from '@/lib/utils';
 
 export default function ServicesPage() {
+  const [headerRef, headerVisible] = useReveal({ threshold: 0.1 });
+  const [contentRef, contentVisible] = useReveal({ threshold: 0.1 });
+
   return (
-    <div className="py-32 bg-zinc-50/50 min-h-screen">
+    <div className="py-32 bg-zinc-50/50 min-h-screen relative overflow-hidden">
+      <div className="absolute inset-0 bg-grid-pattern opacity-30"></div>
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <header className="max-w-3xl mb-24 text-center mx-auto">
+        <header ref={headerRef} className={cn(
+          "max-w-3xl mb-24 text-center mx-auto reveal-base reveal-up",
+          headerVisible && "reveal-visible"
+        )}>
           <h2 className="text-sm tracking-[0.2em] font-semibold text-primary uppercase mb-4">Catálogo Integral</h2>
           <h1 className="text-4xl md:text-6xl font-headline font-light text-foreground mb-6 tracking-tight leading-tight">
             Nuestros <span className="font-semibold text-primary">Servicios</span>
@@ -19,10 +29,18 @@ export default function ServicesPage() {
           </p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {servicesData.map((service) => (
-            <Link href={`/services/${service.slug}`} key={service.slug} className="group block focus:outline-none focus:ring-2 focus:ring-accent rounded-2xl outline-none">
-              <Card className="border border-black/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 bg-white overflow-hidden rounded-2xl flex flex-col h-full relative group">
+        <div ref={contentRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {servicesData.map((service, idx) => (
+            <Link 
+              href={`/services/${service.slug}`} 
+              key={service.slug} 
+              className={cn(
+                "group block focus:outline-none focus:ring-2 focus:ring-accent rounded-2xl outline-none reveal-base reveal-up",
+                contentVisible && "reveal-visible"
+              )}
+              style={{ transitionDelay: `${idx * 150}ms` }}
+            >
+              <Card className="border border-black/5 shadow-sm hover-lift bg-white overflow-hidden rounded-2xl flex flex-col h-full relative group">
                 <div className="relative h-56 overflow-hidden bg-slate-100">
                   <Image 
                     src={service.headerImage} 

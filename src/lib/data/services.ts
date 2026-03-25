@@ -20,16 +20,16 @@ export const servicesData = [
     detailedDescription: 'Nuestro servicio de Ingeniería de Proyectos de Comunicaciones abarca desde el levantamiento de requerimientos hasta el diseño arquitectónico final. Desarrollamos soluciones a medida que garantizan alta disponibilidad, seguridad y escalabilidad para infraestructuras informáticas complejas.',
     icon: Network,
     category: 'Ingeniería',
-    headerImage: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1920&auto=format&fit=crop'
+    headerImage: '/service-ingenieria-comunicaciones.jpg'
   },
   {
     slug: 'seguridad-cctv',
     title: 'Instalación de Seguridad y CCTV',
     description: 'Sistemas de videovigilancia de alta definición, control de acceso y monitoreo inteligente.',
-    detailedDescription: 'Protegemos sus activos mediante el despliegue de avanzadas soluciones de videovigilancia IP, control de acceso biométrico e integración de alarmas. Nuestros sistemas permiten monitoreo remoto 24/7 y análisis inteligente de video para prevención de incidentes.',
+    detailedDescription: 'Protegemos sus activos mediante el despliegue de avanzadas soluciones de videovigilancia IP, control de acceso biométrico e integración de alarmas. Nuestros sistemas permiten monitoreo remoto continuo y análisis inteligente de video para prevención de incidentes.',
     icon: ShieldCheck,
     category: 'Seguridad',
-    headerImage: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1920&auto=format&fit=crop'
+    headerImage: '/service-seguridad-cctv.jpg'
   },
   {
     slug: 'estudios-electricos',
@@ -38,7 +38,7 @@ export const servicesData = [
     detailedDescription: 'Realizamos auditorías energéticas y estudios técnicos para evaluar la eficiencia y seguridad de sus instalaciones. Verificamos el cumplimiento estricto de la normativa eléctrica nacional y elaboramos planes de mejora para prevenir fallas y optimizar consumos.',
     icon: Search,
     category: 'Eléctrica',
-    headerImage: 'https://images.unsplash.com/photo-1498084393753-b411b2d26b34?q=80&w=1920&auto=format&fit=crop'
+    headerImage: '/service-estudios-electricos.jpg'
   },
   {
     slug: 'corrientes-debiles',
@@ -47,7 +47,7 @@ export const servicesData = [
     detailedDescription: 'Diseñamos e implementamos todo el ecosistema de corrientes débiles que un edificio moderno necesita: telefonía IP, citofonía, sistemas de megafonía, control de incendio e integración en plataformas domóticas centralizadas.',
     icon: Activity,
     category: 'Ingeniería',
-    headerImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1920&auto=format&fit=crop'
+    headerImage: '/service-corrientes-debiles.jpg?v=1'
   },
   {
     slug: 'planificacion-redes',
@@ -56,7 +56,7 @@ export const servicesData = [
     detailedDescription: 'Nuestros ingenieros estructuran lógicamente sus redes LAN/WAN considerando crecimiento proyectado, segmentación de tráfico, políticas de seguridad y redundancia. Entregamos planos as-built y memorias de cálculo precisas.',
     icon: Settings,
     category: 'Datos',
-    headerImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop'
+    headerImage: '/service-planificacion-redes.jpg'
   },
   {
     slug: 'analisis-redes',
@@ -83,7 +83,7 @@ export const servicesData = [
     detailedDescription: 'Realizamos tendidos de cableado de cobre y fibra óptica bajo estrictos estándares internacionales (EIA/TIA). Cada punto instalado se entrega canalizado, rotulado y probado, garantizando la velocidad de transmisión certificada.',
     icon: Rss,
     category: 'Infraestructura',
-    headerImage: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80'
+    headerImage: '/service-cableado-estructurado.jpg'
   },
   {
     slug: 'certificacion-redes',
@@ -92,7 +92,7 @@ export const servicesData = [
     detailedDescription: 'Utilizamos equipos de medición calibrados (tipo Fluke) para certificar enlaces de cobre y fibra. Le entregamos el informe de certificación documental exigido para validar garantías de fabricantes y asegurar 0% de atenuación anómala.',
     icon: CheckCircle,
     category: 'Calidad',
-    headerImage: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1920&auto=format&fit=crop'
+    headerImage: '/service-certificacion-redes.jpg'
   },
   {
     slug: 'proyectos-electricos',
@@ -101,7 +101,7 @@ export const servicesData = [
     detailedDescription: 'Desarrollamos la ingeniería de detalle para proyectos de fuerza e iluminación. Incluye diseño de mallas a tierra, cálculos de corto circuito, especificación técnica de tableros y coordinación de protecciones.',
     icon: FileBox,
     category: 'Eléctrica',
-    headerImage: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1920&auto=format&fit=crop'
+    headerImage: '/service-proyectos-electricos.jpg'
   },
   {
     slug: 'suministro-equipos',
@@ -110,6 +110,6 @@ export const servicesData = [
     detailedDescription: 'Como integradores multimarca, proveemos hardware de red y seguridad (Cisco, Fortinet, Ubiquiti, entre otros) al mejor costo. Asesoramos en la compra para que el equipamiento se ajuste perfectamente a su arquitectura técnica.',
     icon: ShoppingBag,
     category: 'Suministros',
-    headerImage: 'https://images.unsplash.com/photo-1591696205602-2f950c417cb9?q=80&w=1920&auto=format&fit=crop'
+    headerImage: '/service-suministro-equipos.jpg'
   }
 ];

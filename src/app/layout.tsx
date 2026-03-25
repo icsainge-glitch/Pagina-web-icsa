@@ -5,8 +5,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'ICSA Solutions | Ingeniería de Comunicaciones y Seguridad',
-  description: 'Ingeniería de proyectos de comunicaciones, seguridad, instalaciones eléctricas y redes. ICSA Ingeniería S.A.',
+  title: 'Ingeniería en Comunicaciones S.A. | Soluciones de Telecomunicaciones y Seguridad',
+  description: 'Ingeniería de proyectos de comunicaciones, seguridad, instalaciones eléctricas y redes. Ingeniería en Comunicaciones S.A.',
 };
 
 export default function RootLayout({

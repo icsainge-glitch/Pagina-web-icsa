@@ -14,8 +14,7 @@ const navLinks = [
   { href: '/services', label: 'Servicios' },
   { href: '/projects', label: 'Portafolio' },
   { href: '/about', label: 'Nosotros' },
-  { href: '/ai-inquiry', label: 'Asistente IA' },
-  { href: '/contact', label: 'Contacto' },
+  { href: '/#contacto', label: 'Contacto' },
 ];
 
 export default function Navbar() {
@@ -43,9 +42,6 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Button asChild size="sm" className="bg-primary hover:bg-primary/90">
-            <Link href="/contact">Cotizar</Link>
-          </Button>
         </div>
 
         {/* Mobile Nav Toggle */}
@@ -74,7 +70,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Button asChild className="w-full bg-primary" onClick={() => setIsOpen(false)}>
-            <Link href="/contact">Contacto Directo</Link>
+            <Link href="/#contacto">Contacto Directo</Link>
           </Button>
         </div>
       )}

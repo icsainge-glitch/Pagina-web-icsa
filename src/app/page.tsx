@@ -1,3 +1,4 @@
+'use client';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -17,24 +18,31 @@ import {
   MapPin,
   Clock
 } from 'lucide-react';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-
+import { useReveal } from '@/hooks/use-reveal';
+import { cn } from '@/lib/utils';
 import { servicesData } from '@/lib/data/services';
 
 export default function Home() {
+  const [heroRef, heroVisible] = useReveal({ threshold: 0.1 });
+  const [servicesRef, servicesVisible] = useReveal({ threshold: 0.1 });
+  const [metricsRef, metricsVisible] = useReveal({ threshold: 0.1 });
+  const [valueRef, valueVisible] = useReveal({ threshold: 0.1 });
+  const [clientsRef, clientsVisible] = useReveal({ threshold: 0.1 });
+  const [contactRef, contactVisible] = useReveal({ threshold: 0.1 });
+
   return (
-    <div className="flex flex-col gap-0">
+    <div className="flex flex-col gap-0 overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden bg-foreground">
         <HeroCarousel />
         <div className="container relative z-10 px-4 text-center text-white max-w-4xl">
-          <h1 className="text-4xl md:text-6xl font-headline font-light mb-6 tracking-tight animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <h1 className="text-4xl md:text-6xl font-headline font-light mb-6 tracking-tight animate-in fade-in slide-in-from-bottom-4 duration-1000 fill-mode-both">
             Soluciones Integrales en <span className="font-semibold text-accent">Ingeniería</span>
           </h1>
-          <p className="text-lg md:text-xl mb-10 text-white/80 font-light animate-in fade-in slide-in-from-bottom-6 duration-700 tracking-wide">
+          <p className="text-lg md:text-xl mb-10 text-white/80 font-light animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-300 fill-mode-both text-balance">
             Empresa chilena especializada en telecomunicaciones, electricidad y seguridad tecnológica. Apoyando la toma de decisiones con información técnica confiable.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center animate-in fade-in slide-in-from-bottom-8 duration-700">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both">
             <Button asChild size="lg" className="bg-accent text-accent-foreground font-semibold rounded-full px-8 hover:bg-accent/90 shadow-lg transition-transform hover:-translate-y-1">
               <Link href="/services">Explorar Servicios</Link>
             </Button>
@@ -46,18 +54,30 @@ export default function Home() {
       </section>
 
       {/* Services Highlights */}
-      <section className="py-24 bg-zinc-50/50">
-        <div className="container mx-auto px-6 md:px-12">
+      <section ref={servicesRef} className="py-24 bg-zinc-50/50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern opacity-100"></div>
+        <div className={cn(
+          "container mx-auto px-6 md:px-12 relative z-10 reveal-base reveal-up",
+          servicesVisible && "reveal-visible"
+        )}>
           <div className="max-w-3xl mb-20 text-center mx-auto">
             <h2 className="text-sm tracking-[0.2em] font-semibold text-primary uppercase mb-4">Especialidades</h2>
-            <h3 className="text-3xl md:text-5xl font-light text-foreground tracking-tight leading-tight">
+            <h3 className="text-3xl md:text-5xl font-light text-foreground tracking-tight leading-tight text-balance">
               Diseño, implementación y certificación de <span className="font-semibold text-primary">sistemas técnicos</span>.
             </h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {servicesData.slice(0, 6).map((service, idx) => (
-              <Link href={`/services/${service.slug}`} key={idx} className="group block focus:outline-none focus:ring-2 focus:ring-accent rounded-2xl outline-none">
-                <Card className="border border-black/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 bg-white overflow-hidden rounded-2xl flex flex-col h-full relative group">
+              <Link 
+                href={`/services/${service.slug}`} 
+                key={idx} 
+                className={cn(
+                  "group block focus:outline-none focus:ring-2 focus:ring-accent rounded-2xl outline-none reveal-base reveal-up",
+                  servicesVisible && "reveal-visible"
+                )}
+                style={{ transitionDelay: `${idx * 150}ms` }}
+              >
+                <Card className="border border-black/5 shadow-sm hover-lift bg-white overflow-hidden rounded-2xl flex flex-col h-full relative group">
                   <div className="relative h-56 overflow-hidden bg-slate-100">
                     <Image 
                       src={service.headerImage} 
@@ -86,20 +106,24 @@ export default function Home() {
       </section>
 
       {/* Metrics & CTA */}
-      <section className="py-32 text-white overflow-hidden relative">
+      <section ref={metricsRef} className="py-32 text-white overflow-hidden relative">
         {/* Background Image with Dark Overlay */}
         <div className="absolute inset-0 z-0">
           <Image 
             src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=2000" 
             alt="Data Center Infrastructure" 
             fill 
-            className="object-cover brightness-[0.25] transition-transform duration-[10s] hover:scale-105" 
+            className="object-cover brightness-[0.25] transition-transform [transition-duration:10s] hover:scale-110" 
           />
-          <div className="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-primary/30 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-foreground/50 via-transparent to-foreground/50"></div>
         </div>
         
-        <div className="container mx-auto px-6 md:px-12 relative z-10 text-center">
-            <h2 className="text-3xl md:text-5xl font-headline font-light mb-12 tracking-tight">
+        <div className={cn(
+          "container mx-auto px-6 md:px-12 relative z-10 text-center reveal-base reveal-scale",
+          metricsVisible && "reveal-visible"
+        )}>
+            <h2 className="text-3xl md:text-5xl font-headline font-light mb-12 tracking-tight text-balance">
                Infraestructura confiable, <span className="font-semibold text-accent">resultados medibles</span>.
             </h2>
             <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-0 max-w-5xl mx-auto mb-16">
@@ -111,41 +135,42 @@ export default function Home() {
                   <span className="text-5xl md:text-7xl font-bold text-white mb-3 tracking-tighter">500+</span>
                   <span className="text-sm text-white/50 uppercase tracking-widest font-semibold">Proyectos</span>
                </div>
-               <div className="flex-1 flex flex-col items-center justify-center p-6 w-full md:border-r border-white/10">
+               <div className="flex-1 flex flex-col items-center justify-center p-6 w-full">
                   <span className="text-5xl md:text-7xl font-bold text-white mb-3 tracking-tighter">100%</span>
                   <span className="text-sm text-white/50 uppercase tracking-widest font-semibold">Certificados</span>
-               </div>
-               <div className="flex-1 flex flex-col items-center justify-center p-6 w-full">
-                  <span className="text-5xl md:text-7xl font-bold text-white mb-3 tracking-tighter">24/7</span>
-                  <span className="text-sm text-white/50 uppercase tracking-widest font-semibold">Soporte Vital</span>
                </div>
             </div>
             <p className="text-lg text-white/70 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
                Si su empresa requiere un socio estratégico para diseñar, implementar o certificar infraestructura tecnológica o eléctrica crítica, estamos a su disposición.
             </p>
             <Button asChild size="lg" className="bg-accent text-accent-foreground font-semibold rounded-full px-10 hover:bg-accent/90 shadow-lg transition-transform hover:-translate-y-1">
-               <Link href="/contact">Hablar con ICSA</Link>
+               <Link href="#contacto">Hablemos de su proyecto</Link>
             </Button>
         </div>
       </section>
 
-      {/* Value Proposition */}
-      <section className="py-24 bg-white border-y border-black/5">
-        <div className="container mx-auto px-6 md:px-12">
+      <section ref={valueRef} className="py-24 bg-white border-y border-black/5 relative overflow-hidden">
+        <div className="container mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <div>
+            <div className={cn(
+              "reveal-base reveal-left",
+              valueVisible && "reveal-visible"
+            )}>
                <h2 className="text-sm tracking-[0.2em] font-semibold text-primary uppercase mb-4">Propuesta de Valor</h2>
-               <h3 className="text-3xl md:text-5xl font-light text-foreground tracking-tight leading-tight mb-8">
+               <h3 className="text-3xl md:text-5xl font-light text-foreground tracking-tight leading-tight mb-8 text-balance">
                  Elevamos el estándar de la <span className="font-semibold text-primary">ingeniería corporativa</span>.
                </h3>
                <p className="text-muted-foreground leading-relaxed font-light text-lg mb-10">
                  Ejecutamos proyectos de misión crítica con un altísimo nivel técnico, adaptándonos exactamente a sus requerimientos y certificando de extremo a extremo cada entrega operacional.
                </p>
                <Button asChild size="lg" className="bg-primary text-primary-foreground font-medium rounded-full px-8 shadow-sm hover:shadow-md transition-all">
-                  <Link href="/about">Conocer más sobre ICSA</Link>
+                  <Link href="/about">Conocer nuestra historia</Link>
                </Button>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12">
+            <div className={cn(
+              "grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12 reveal-base reveal-right",
+              valueVisible && "reveal-visible"
+            )}>
                <div className="space-y-4">
                   <div className="h-14 w-14 rounded-2xl bg-primary/5 flex items-center justify-center text-primary border border-primary/10 shadow-sm"><Settings className="h-6 w-6"/></div>
                   <h4 className="text-lg font-semibold text-foreground">Soluciones Integrales</h4>
@@ -171,9 +196,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Clients */}
-      <section className="py-24 bg-zinc-50 overflow-hidden">
-        <div className="container mx-auto px-6 md:px-12 text-center">
+      <section ref={clientsRef} className="py-24 bg-zinc-50 overflow-hidden">
+        <div className={cn(
+          "container mx-auto px-6 md:px-12 text-center reveal-base reveal-up",
+          clientsVisible && "reveal-visible"
+        )}>
            <h3 className="text-sm tracking-[0.2em] uppercase font-semibold text-muted-foreground mb-16">
              Empresas e industrias que confían en nuestra infraestructura
            </h3>
@@ -224,22 +251,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contacto" className="py-24 bg-white border-t border-black/5">
+      <section id="contacto" ref={contactRef} className="py-24 bg-white border-t border-black/5">
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             
-            {/* Contact Info */}
-            <div className="space-y-12">
-              <div className="space-y-6">
-                <h2 className="text-sm tracking-[0.2em] font-semibold text-primary uppercase mb-4">Contacto</h2>
-                <h3 className="text-3xl md:text-5xl font-headline font-light text-foreground tracking-tight leading-tight">
-                  Hablemos de su <span className="font-semibold text-primary">próximo proyecto</span>.
-                </h3>
-                <p className="text-lg text-muted-foreground font-light leading-relaxed">
-                  Nuestro equipo de expertos en ingeniería y telecomunicaciones está listo para asesorarlo. Conecte directo con nuestras oficinas.
-                </p>
-              </div>
+            <div className={cn(
+              "space-y-12 reveal-base reveal-left",
+              contactVisible && "reveal-visible"
+            )}>
+               <div className="space-y-6">
+                 <h2 className="text-sm tracking-[0.2em] font-semibold text-primary uppercase mb-4">Contacto</h2>
+                 <h3 className="text-3xl md:text-5xl font-headline font-light text-foreground tracking-tight leading-tight text-balance">
+                   Hablemos de su <span className="font-semibold text-primary">próximo proyecto</span>.
+                 </h3>
+                 <p className="text-lg text-muted-foreground font-light leading-relaxed">
+                   Nuestro equipo de expertos en ingeniería y telecomunicaciones está listo para asesorarlo. Conecte directo con nuestras oficinas.
+                 </p>
+               </div>
 
               <div className="grid sm:grid-cols-2 gap-10">
                 <div className="flex gap-4 items-start">
@@ -285,36 +313,40 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Contact Form */}
-            <Card className="border border-black/5 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden rounded-2xl w-full">
-               <div className="bg-foreground p-8 text-white">
-                  <h3 className="text-2xl font-light tracking-tight mb-2">Formulario de <span className="font-semibold text-accent">Contacto</span></h3>
-                  <p className="text-white/60 text-sm font-light">Déjenos su mensaje y un especialista lo contactará a la brevedad.</p>
-               </div>
-               <CardContent className="p-8 space-y-6 bg-white">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Nombre</label>
-                      <Input placeholder="Su nombre" className="border-black/10 focus-visible:ring-primary shadow-none" />
+            <div className={cn(
+              "reveal-base reveal-right",
+              contactVisible && "reveal-visible"
+            )}>
+              <Card className="border border-black/5 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden rounded-2xl w-full">
+                 <div className="bg-foreground p-8 text-white">
+                    <h3 className="text-2xl font-light tracking-tight mb-2">Formulario de <span className="font-semibold text-accent">Contacto</span></h3>
+                    <p className="text-white/60 text-sm font-light">Déjenos su mensaje y un especialista lo contactará a la brevedad.</p>
+                 </div>
+                 <CardContent className="p-8 space-y-6 bg-white">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Nombre</label>
+                        <Input placeholder="Su nombre" className="border-black/10 focus-visible:ring-primary shadow-none" />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Empresa</label>
+                        <Input placeholder="Su empresa" className="border-black/10 focus-visible:ring-primary shadow-none" />
+                      </div>
                     </div>
                     <div className="space-y-2">
-                      <label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Empresa</label>
-                      <Input placeholder="Su empresa" className="border-black/10 focus-visible:ring-primary shadow-none" />
+                      <label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Correo Corporativo</label>
+                      <Input type="email" placeholder="ejemplo@empresa.cl" className="border-black/10 focus-visible:ring-primary shadow-none" />
                     </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Correo Corporativo</label>
-                    <Input type="email" placeholder="ejemplo@empresa.cl" className="border-black/10 focus-visible:ring-primary shadow-none" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Mensaje</label>
-                    <Textarea placeholder="Describa brevemente su requerimiento..." className="min-h-[120px] border-black/10 focus-visible:ring-primary shadow-none resize-none" />
-                  </div>
-                  <Button className="w-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 rounded-xl py-6 shadow-md transition-all">
-                    Enviar Mensaje Directo
-                  </Button>
-               </CardContent>
-            </Card>
+                    <div className="space-y-2">
+                      <label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Mensaje</label>
+                      <Textarea placeholder="Describa brevemente su requerimiento..." className="min-h-[120px] border-black/10 focus-visible:ring-primary shadow-none resize-none" />
+                    </div>
+                    <Button className="w-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 rounded-xl py-6 shadow-md transition-all">
+                      Enviar Mensaje Directo
+                    </Button>
+                 </CardContent>
+              </Card>
+            </div>
 
           </div>
         </div>

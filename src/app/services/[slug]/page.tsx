@@ -62,7 +62,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           
           <div className="pt-8 text-center md:text-left">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground h-14 px-8 text-lg rounded-xl shadow-md hover:shadow-lg transition-all">
-              <Link href="/contact">Solicitar cotización para este servicio</Link>
+              <Link href="/#contacto">Solicitar cotización para este servicio</Link>
             </Button>
           </div>
         </div>

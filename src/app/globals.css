@@ -49,6 +49,50 @@
   }
 }
 
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .reveal-base {
+    @apply opacity-0 transition-all duration-1000;
+    transition-timing-function: cubic-bezier(0.21,1.02,0.73,1);
+  }
+
+  .reveal-visible {
+    @apply opacity-100 translate-y-0 translate-x-0 scale-100;
+  }
+
+  .reveal-up {
+    @apply translate-y-8;
+  }
+
+  .reveal-left {
+    @apply -translate-x-8;
+  }
+
+  .reveal-right {
+    @apply translate-x-8;
+  }
+
+  .reveal-scale {
+    @apply scale-95;
+  }
+
+  .bg-grid-pattern {
+    background-image: radial-gradient(circle, hsl(var(--primary) / 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;

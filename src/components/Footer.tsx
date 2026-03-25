@@ -34,7 +34,6 @@ export default function Footer() {
               <li><Link href="/services" className="text-muted-foreground hover:text-accent transition-colors">Servicios</Link></li>
               <li><Link href="/projects" className="text-muted-foreground hover:text-accent transition-colors">Proyectos</Link></li>
               <li><Link href="/about" className="text-muted-foreground hover:text-accent transition-colors">Sobre Nosotros</Link></li>
-              <li><Link href="/ai-inquiry" className="text-muted-foreground hover:text-accent transition-colors">Asistente IA</Link></li>
             </ul>
           </div>
 
@@ -68,7 +67,7 @@ export default function Footer() {
         </div>
         
         <div className="mt-12 pt-8 border-t text-center text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} ICSA Ingeniería S.A. Todos los derechos reservados.</p>
+          <p>© {new Date().getFullYear()} Ingeniería en Comunicaciones S.A. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
