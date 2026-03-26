@@ -118,13 +118,14 @@ export default function Home() {
             )}>
               <div className="absolute inset-0 bg-primary/20 mix-blend-multiply z-10 transition-opacity duration-500 hover:opacity-0 group"></div>
               <video 
-                src="https://raw.githubusercontent.com/icsainge-glitch/Imagenes-pagina-web/main/Animaci%C3%B3n_de_Imagen_Sin_Acercamiento.mp4" 
                 autoPlay 
                 loop 
                 muted 
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover object-[80%_center]" 
-              />
+              >
+                <source src="/identidad-corporativa.mp4" type="video/mp4" />
+              </video>
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-8 md:p-12 z-20">
                 <div className="text-white border-l-4 border-accent pl-6">
                   <p className="font-bold text-2xl md:text-3xl lg:text-4xl mb-2 drop-shadow-md">Ingeniería en Comunicaciones S.A.</p>
@@ -145,7 +146,7 @@ export default function Home() {
               </div>
               
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
-                En <strong className="font-medium text-foreground">Ingeniería en Comunicaciones S.A.</strong> somos los arquitectos de su continuidad operativa. Desplegamos equipos para diseñar, certificar y mantener operativas sus instalaciones tecnológicas críticas, asegurando que su negocio no se detenga jamás.
+                En <strong className="font-medium text-foreground">Ingeniería en Comunicaciones S.A.</strong> diseñamos y certificamos las instalaciones más críticas del país. Aseguramos que su infraestructura sea el motor, y no el obstáculo, de su crecimiento.
               </p>
               
               <div className="grid sm:grid-cols-2 gap-8 pt-8 border-t border-black/5">
