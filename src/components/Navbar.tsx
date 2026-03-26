@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Shield, Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/ui/logo';
 
@@ -20,12 +20,31 @@ const navLinks = [
 export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const isHome = pathname === '/';
+  const navTransparent = isHome && !isScrolled && !isOpen;
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b">
+    <nav 
+      className={cn(
+        "fixed top-0 z-50 w-full transition-all duration-300 ease-in-out",
+        navTransparent 
+          ? "bg-transparent border-transparent py-4" 
+          : "bg-background/80 backdrop-blur-md border-b py-0 shadow-sm"
+      )}
+    >
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
-          <Logo />
+          <Logo isTransparent={navTransparent} />
         </Link>
 
         {/* Desktop Nav */}
@@ -36,7 +55,8 @@ export default function Navbar() {
               href={link.href}
               className={cn(
                 'text-sm font-medium transition-colors hover:text-accent',
-                pathname === link.href ? 'text-accent' : 'text-muted-foreground'
+                navTransparent ? 'text-white/90' : 'text-muted-foreground',
+                pathname === link.href && (navTransparent ? 'text-accent' : 'text-accent')
               )}
             >
               {link.label}
@@ -46,7 +66,10 @@ export default function Navbar() {
 
         {/* Mobile Nav Toggle */}
         <button
-          className="md:hidden p-2 text-muted-foreground hover:text-primary transition-colors"
+          className={cn(
+            "md:hidden p-2 transition-colors",
+            navTransparent ? "text-white" : "text-muted-foreground hover:text-primary"
+          )}
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

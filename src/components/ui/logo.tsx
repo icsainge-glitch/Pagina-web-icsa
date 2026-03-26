@@ -1,4 +1,4 @@
-export function Logo({ className = "" }: { className?: string }) {
+export function Logo({ className = "", isTransparent = false }: { className?: string; isTransparent?: boolean }) {
   return (
     <div className={`flex items-center gap-2 ${className}`}>
       <svg width="48" height="32" viewBox="0 0 128 80" xmlns="http://www.w3.org/2000/svg" className="shadow-sm border border-border/20 rounded-sm">
@@ -17,8 +17,8 @@ export function Logo({ className = "" }: { className?: string }) {
         </text>
       </svg>
       <div className="flex flex-col">
-        <span className="text-[11px] text-foreground font-bold uppercase tracking-widest leading-none mb-0.5">Ingeniería</span>
-        <span className="text-[9px] text-muted-foreground font-semibold uppercase tracking-wider leading-none">en Comunicaciones S.A.</span>
+        <span className={`text-[11px] font-bold uppercase tracking-widest leading-none mb-0.5 ${isTransparent ? 'text-white' : 'text-foreground'}`}>Ingeniería</span>
+        <span className={`text-[9px] font-semibold uppercase tracking-wider leading-none ${isTransparent ? 'text-white/80' : 'text-muted-foreground'}`}>en Comunicaciones S.A.</span>
       </div>
     </div>
   );

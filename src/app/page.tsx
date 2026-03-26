@@ -35,24 +35,8 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-0 overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden bg-foreground">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-foreground">
         <HeroCarousel />
-        <div className="container relative z-10 px-4 text-center text-white max-w-4xl">
-          <h1 className="text-4xl md:text-6xl font-headline font-light mb-6 tracking-tight animate-in fade-in slide-in-from-bottom-4 duration-1000 fill-mode-both">
-            Soluciones Integrales en <span className="font-semibold text-accent">Ingeniería</span>
-          </h1>
-          <p className="text-lg md:text-xl mb-10 text-white/80 font-light animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-300 fill-mode-both text-balance">
-            Empresa chilena especializada en telecomunicaciones, electricidad y seguridad tecnológica. Apoyando la toma de decisiones con información técnica confiable.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both">
-            <Button asChild size="lg" className="bg-accent text-accent-foreground font-semibold rounded-full px-8 hover:bg-accent/90 shadow-lg transition-transform hover:-translate-y-1">
-              <Link href="/services">Explorar Servicios</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="bg-transparent text-white border-white/40 rounded-full px-8 hover:bg-white hover:text-foreground transition-all">
-              <Link href="#contacto">Contacto Directo</Link>
-            </Button>
-          </div>
-        </div>
       </section>
 
       {/* Services Highlights */}
