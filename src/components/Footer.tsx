@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { Shield, Phone, Mail, MapPin, Linkedin, Facebook, Twitter } from 'lucide-react';
+import { Shield, Phone, Mail, MapPin } from 'lucide-react';
 import { Logo } from '@/components/ui/logo';
 
 export default function Footer() {
@@ -15,17 +15,6 @@ export default function Footer() {
             <p className="text-sm text-muted-foreground leading-relaxed">
               Líderes en ingeniería de comunicaciones y sistemas de seguridad. Innovación y confianza para tu infraestructura tecnológica.
             </p>
-            <div className="flex gap-4">
-              <Link href="#" className="text-muted-foreground hover:text-accent transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-accent transition-colors">
-                <Facebook className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-accent transition-colors">
-                <Twitter className="h-5 w-5" />
-              </Link>
-            </div>
           </div>
 
           <div>

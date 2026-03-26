@@ -40,15 +40,15 @@ export default function Home() {
       </section>
 
       {/* Services Highlights */}
-      <section ref={servicesRef} className="py-24 bg-zinc-50/50 relative overflow-hidden">
+      <section ref={servicesRef} className="py-16 md:py-24 bg-zinc-50/50 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-100"></div>
         <div className={cn(
           "container mx-auto px-6 md:px-12 relative z-10 reveal-base reveal-up",
           servicesVisible && "reveal-visible"
         )}>
-          <div className="max-w-3xl mb-20 text-center mx-auto">
+          <div className="max-w-3xl mb-12 md:mb-20 text-center mx-auto">
             <h2 className="text-sm tracking-[0.2em] font-semibold text-primary uppercase mb-4">Especialidades</h2>
-            <h3 className="text-3xl md:text-5xl font-light text-foreground tracking-tight leading-tight text-balance">
+            <h3 className="text-2xl sm:text-3xl md:text-5xl font-light text-foreground tracking-tight leading-tight text-balance">
               Diseño, implementación y certificación de <span className="font-semibold text-primary">sistemas técnicos</span>.
             </h3>
           </div>
@@ -97,7 +97,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
             
             <div className={cn(
-              "flex-1 relative h-[450px] lg:h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl reveal-base reveal-left",
+              "flex-1 relative h-[300px] sm:h-[450px] lg:h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl reveal-base reveal-left",
               aboutVisible && "reveal-visible"
             )}>
               <div className="absolute inset-0 bg-primary/20 mix-blend-multiply z-10 transition-opacity duration-500 hover:opacity-0 group"></div>
@@ -110,10 +110,10 @@ export default function Home() {
               >
                 <source src="/identidad-corporativa.mp4" type="video/mp4" />
               </video>
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-8 md:p-12 z-20">
-                <div className="text-white border-l-4 border-accent pl-6">
-                  <p className="font-bold text-2xl md:text-3xl lg:text-4xl mb-2 drop-shadow-md">Ingeniería en Comunicaciones S.A.</p>
-                  <p className="text-white/80 font-medium tracking-wide text-lg">La columna vertebral de la industria</p>
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 md:p-12 z-20">
+                <div className="text-white border-l-4 border-accent pl-4 md:pl-6">
+                  <p className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-1 md:mb-2 drop-shadow-md">Ingeniería en Comunicaciones S.A.</p>
+                  <p className="text-white/80 font-medium tracking-wide text-base md:text-lg">La columna vertebral de la industria</p>
                 </div>
               </div>
             </div>
@@ -124,7 +124,7 @@ export default function Home() {
             )}>
               <div>
                 <h2 className="text-sm tracking-[0.2em] font-semibold text-primary uppercase mb-4">Identidad Corporativa</h2>
-                <h3 className="text-3xl md:text-5xl lg:text-6xl font-headline font-light text-foreground tracking-tight leading-tight text-balance">
+                <h3 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-headline font-light text-foreground tracking-tight leading-tight text-balance">
                   El motor tecnológico del <span className="font-semibold text-primary">quehacer nacional</span>.
                 </h3>
               </div>
@@ -148,7 +148,7 @@ export default function Home() {
       </section>
 
       {/* Metrics & CTA */}
-      <section ref={metricsRef} className="py-32 text-white overflow-hidden relative">
+      <section ref={metricsRef} className="py-20 md:py-32 text-white overflow-hidden relative">
         {/* Background Image with Dark Overlay */}
         <div className="absolute inset-0 z-0">
           <Image 
@@ -165,20 +165,20 @@ export default function Home() {
           "container mx-auto px-6 md:px-12 relative z-10 text-center reveal-base reveal-scale",
           metricsVisible && "reveal-visible"
         )}>
-            <h2 className="text-3xl md:text-5xl font-headline font-light mb-12 tracking-tight text-balance">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-headline font-light mb-12 tracking-tight text-balance">
                Infraestructura confiable, <span className="font-semibold text-accent">resultados medibles</span>.
             </h2>
             <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-0 max-w-5xl mx-auto mb-16">
                <div className="flex-1 flex flex-col items-center justify-center p-6 w-full md:border-r border-white/10">
-                  <span className="text-5xl md:text-7xl font-bold text-white mb-3 tracking-tighter">15+</span>
+                  <span className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-3 tracking-tighter">15+</span>
                   <span className="text-sm text-white/50 uppercase tracking-widest font-semibold">Años de Exp.</span>
                </div>
                <div className="flex-1 flex flex-col items-center justify-center p-6 w-full md:border-r border-white/10">
-                  <span className="text-5xl md:text-7xl font-bold text-white mb-3 tracking-tighter">500+</span>
+                  <span className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-3 tracking-tighter">500+</span>
                   <span className="text-sm text-white/50 uppercase tracking-widest font-semibold">Proyectos</span>
                </div>
                <div className="flex-1 flex flex-col items-center justify-center p-6 w-full">
-                  <span className="text-5xl md:text-7xl font-bold text-white mb-3 tracking-tighter">100%</span>
+                  <span className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-3 tracking-tighter">100%</span>
                   <span className="text-sm text-white/50 uppercase tracking-widest font-semibold">Certificados</span>
                </div>
             </div>
@@ -199,7 +199,7 @@ export default function Home() {
               valueVisible && "reveal-visible"
             )}>
                <h2 className="text-sm tracking-[0.2em] font-semibold text-primary uppercase mb-4">Propuesta de Valor</h2>
-               <h3 className="text-3xl md:text-5xl font-light text-foreground tracking-tight leading-tight mb-8 text-balance">
+               <h3 className="text-2xl sm:text-3xl md:text-5xl font-light text-foreground tracking-tight leading-tight mb-8 text-balance">
                  Elevamos el estándar de la <span className="font-semibold text-primary">ingeniería corporativa</span>.
                </h3>
                <p className="text-muted-foreground leading-relaxed font-light text-lg mb-10">
@@ -243,7 +243,7 @@ export default function Home() {
           "container mx-auto px-6 md:px-12 text-center reveal-base reveal-up",
           clientsVisible && "reveal-visible"
         )}>
-           <div className="max-w-3xl mx-auto mb-16 text-center">
+           <div className="max-w-3xl mx-auto mb-12 md:mb-16 text-center">
              <h2 className="text-sm tracking-[0.2em] font-semibold text-primary uppercase mb-4">Confianza Corporativa</h2>
              <h3 className="text-3xl md:text-5xl font-light text-foreground tracking-tight leading-tight text-balance">
                Empresas e industrias que respaldan nuestra <span className="font-semibold text-primary">experiencia</span>
@@ -306,7 +306,7 @@ export default function Home() {
             )}>
                <div className="space-y-6">
                  <h2 className="text-sm tracking-[0.2em] font-semibold text-primary uppercase mb-4">Contacto</h2>
-                 <h3 className="text-3xl md:text-5xl font-headline font-light text-foreground tracking-tight leading-tight text-balance">
+                 <h3 className="text-2xl sm:text-3xl md:text-5xl font-headline font-light text-foreground tracking-tight leading-tight text-balance">
                    Hablemos de su <span className="font-semibold text-primary">próximo proyecto</span>.
                  </h3>
                  <p className="text-lg text-muted-foreground font-light leading-relaxed">

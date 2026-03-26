@@ -84,7 +84,7 @@ export const servicesData = [
     detailedDescription: 'Nuestros ingenieros estructuran lógicamente sus redes LAN/WAN considerando crecimiento proyectado, segmentación de tráfico, políticas de seguridad y redundancia. Entregamos planos as-built y memorias de cálculo precisas.',
     icon: Settings,
     category: 'Datos',
-    headerImage: '/service-planificacion-redes.jpg',
+    headerImage: '/service-planificacion-redes-v2.png',
     features: [
       'Diseño core, distribución y acceso de topologías LAN.',
       'Planificación de enlaces WAN y VPN multisitio.',

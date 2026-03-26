@@ -60,17 +60,17 @@ export function HeroCarousel() {
                 : 'opacity-0 translate-y-8 pointer-events-none'
             }`}
           >
-            <h1 className="text-4xl md:text-6xl font-headline font-light mb-6 tracking-tight text-balance">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-headline font-light mb-4 md:mb-6 tracking-tight text-balance">
               {item.title}
             </h1>
-            <p className="text-lg md:text-xl mb-10 text-white/80 font-light text-balance max-w-2xl">
+            <p className="text-base sm:text-lg md:text-xl mb-8 md:mb-10 text-white/80 font-light text-balance max-w-2xl px-2">
               {item.description}
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button asChild size="lg" className="bg-accent text-accent-foreground font-semibold rounded-full px-8 hover:bg-accent/90 shadow-lg transition-transform hover:-translate-y-1">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center w-full sm:w-auto px-4 sm:px-0">
+              <Button asChild size="lg" className="bg-accent text-accent-foreground font-semibold rounded-full px-6 sm:px-8 hover:bg-accent/90 shadow-lg transition-transform hover:-translate-y-1 w-full sm:w-auto">
                 <Link href="/services">Explorar Servicios</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-transparent text-white border-white/40 rounded-full px-8 hover:bg-white hover:text-foreground transition-all">
+              <Button asChild size="lg" variant="outline" className="bg-transparent text-white border-white/40 rounded-full px-6 sm:px-8 hover:bg-white hover:text-foreground transition-all w-full sm:w-auto">
                 <Link href="#contacto">Contacto Directo</Link>
               </Button>
             </div>
