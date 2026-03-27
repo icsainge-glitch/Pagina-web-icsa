@@ -132,7 +132,7 @@ export const servicesData = [
     detailedDescription: 'Evaluación, diseño, implementación y administración de infraestructura TI y entorno físico: racks, UPS, piso falso, cielo falso, climatización, tableros, patch panels y más.',
     icon: Server,
     category: 'Infraestructura',
-    headerImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80',
+    headerImage: '/service-infraestructura-ti.png',
     features: [
       'Diseño de salas de servidores y Data Centers.',
       'Instalación de Racks, UPS y climatización.',

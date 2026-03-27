@@ -150,12 +150,12 @@ export const projectsData: ProjectDetail[] = [
   },
   {
     id: 'javiera-carrera',
-    title: 'Colegio San Javier',
-    location: 'Puerto Montt / Santiago',
+    title: 'Colegio Javiera Carrera',
+    location: 'Rancagua',
     category: 'Conectividad & CCTV',
     image: 'project-sanjavier',
     description: 'Red con balanceo y respaldo de internet, 51 switches y red WiFi masiva.',
-    fullDescription: 'Proyecto de modernización digital para el Colegio San Javier. Se implementó una red robusta capaz de soportar cientos de dispositivos concurrentes en un entorno educativo exigente, garantizando internet sin interrupciones.',
+    fullDescription: 'Proyecto de modernización digital para el Colegio Javiera Carrera en Rancagua. Se implementó una red robusta capaz de soportar cientos de dispositivos concurrentes en un entorno educativo exigente, garantizando internet sin interrupciones.',
     stats: [
       { label: 'Switches', value: '51' },
       { label: 'Puntos Usuario', value: '134' },

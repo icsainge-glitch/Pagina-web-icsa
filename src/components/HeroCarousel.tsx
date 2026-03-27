@@ -42,7 +42,7 @@ export function HeroCarousel() {
             src={item.image}
             alt={`Fondo Hero ${index + 1}`}
             fill
-            className={`object-cover brightness-[0.45] transition-all duration-1000 ease-in-out ${
+            className={`object-cover brightness-[0.55] transition-all duration-1000 ease-in-out ${
               index === currentIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
             }`}
             priority={index === 0}

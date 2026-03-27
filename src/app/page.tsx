@@ -177,9 +177,9 @@ export default function Home() {
             src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=2000" 
             alt="Data Center Infrastructure" 
             fill 
-            className="object-cover brightness-[0.25] transition-transform [transition-duration:10s] hover:scale-110" 
+            className="object-cover brightness-[0.4] transition-transform [transition-duration:10s] hover:scale-110" 
           />
-          <div className="absolute inset-0 bg-primary/30 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-foreground/50 via-transparent to-foreground/50"></div>
         </div>
         
@@ -334,6 +334,17 @@ export default function Home() {
                  <div className="w-[160px] h-20 relative flex-shrink-0">
                     <Image src="/clients/client6.png" alt="Entel" fill className="object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
                  </div>
+
+                  <div className="w-[160px] h-20 relative flex-shrink-0">
+                     <Image src="/clients/client7.png" alt="Colegio Javiera Carrera" fill className="object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                  </div>
+                  <div className="w-[160px] h-20 relative flex-shrink-0">
+                     <Image src="/clients/client8.png" alt="Mall Plaza" fill className="object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                  </div>
+
+                  <div className="w-[160px] h-20 relative flex-shrink-0">
+                     <Image src="/clients/client9.png" alt="Subus Chile" fill className="object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                  </div>
                </div>
                
                {/* Duplicated Set for Seamless Looping */}
@@ -356,6 +367,17 @@ export default function Home() {
                  <div className="w-[160px] h-20 relative flex-shrink-0">
                     <Image src="/clients/client6.png" alt="Entel" fill className="object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
                  </div>
+
+                  <div className="w-[160px] h-20 relative flex-shrink-0">
+                     <Image src="/clients/client7.png" alt="Colegio Javiera Carrera" fill className="object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                  </div>
+                  <div className="w-[160px] h-20 relative flex-shrink-0">
+                     <Image src="/clients/client8.png" alt="Mall Plaza" fill className="object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                  </div>
+
+                  <div className="w-[160px] h-20 relative flex-shrink-0">
+                     <Image src="/clients/client9.png" alt="Subus Chile" fill className="object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                  </div>
                </div>
              </div>
            </div>

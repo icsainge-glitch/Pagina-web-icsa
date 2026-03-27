@@ -92,15 +92,15 @@
     },
     {
       "id": "project-sanjavier",
-      "description": "Colegio San Javier",
+      "description": "Colegio Javiera Carrera",
       "imageUrl": "/project-javiera.jpg",
-      "imageHint": "san javier school"
+      "imageHint": "javiera carrera school"
     },
     {
       "id": "about-team",
-      "description": "Engineers working on a project plan",
-      "imageUrl": "https://picsum.photos/seed/icsa6/1000/600",
-      "imageHint": "engineering team"
+      "description": "Equipo ICSA Ingeniería",
+      "imageUrl": "/about-team.png",
+      "imageHint": "icsa team group photo"
     }
   ]
 }

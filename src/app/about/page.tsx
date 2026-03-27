@@ -184,14 +184,14 @@ export default function AboutPage() {
               </div>
             </div>
             <div className={cn(
-               "flex-1 relative h-[400px] w-full rounded-3xl overflow-hidden shadow-xl reveal-base reveal-left",
+               "flex-1 relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl bg-white border border-black/5 reveal-base reveal-left",
                qualityVisible && "reveal-visible"
             )}>
                <Image 
-                src="https://images.unsplash.com/photo-1581092334651-ddf26d9a1930?auto=format&fit=crop&q=80&w=1000" 
-                alt="Quality Control Engineering" 
+                src="/certificaciones.png" 
+                alt="Certificaciones Técnicas ICSA" 
                 fill 
-                className="object-cover"
+                className="object-contain p-8"
                />
             </div>
           </div>
