@@ -41,15 +41,15 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex gap-2 items-start text-muted-foreground">
                 <MapPin className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                <span className="leading-tight">Abel González 324.<br/>La Cisterna Santiago, Chile</span>
+                <span className="leading-tight">Santiago, Chile</span>
               </li>
               <li className="flex gap-2 items-center text-muted-foreground">
                 <Phone className="h-5 w-5 text-accent shrink-0" />
-                <span>+56 9 1234 5678</span>
+                <span>+56 9 9532 9205</span>
               </li>
               <li className="flex gap-2 items-center text-muted-foreground">
                 <Mail className="h-5 w-5 text-accent shrink-0" />
-                <span>contacto@icsa.cl</span>
+                <span>aalvarado@icsaingenieria.cl</span>
               </li>
             </ul>
           </div>

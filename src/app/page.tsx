@@ -17,7 +17,13 @@ import {
   Mail,
   MapPin,
   Clock,
-  CheckCircle
+  CheckCircle,
+  Building2,
+  Landmark,
+  Cpu,
+  GraduationCap,
+  ShoppingBag,
+  Globe
 } from 'lucide-react';
 import { useReveal } from '@/hooks/use-reveal';
 import { cn } from '@/lib/utils';
@@ -31,6 +37,16 @@ export default function Home() {
   const [valueRef, valueVisible] = useReveal({ threshold: 0.1 });
   const [clientsRef, clientsVisible] = useReveal({ threshold: 0.1 });
   const [contactRef, contactVisible] = useReveal({ threshold: 0.1 });
+  const [sectorsRef, sectorsVisible] = useReveal({ threshold: 0.1 });
+
+  const sectors = [
+    { name: 'Telecomunicaciones (TELCO)', icon: Network, desc: 'Datacenters, nodos y redes críticas de fibra óptica.' },
+    { name: 'Sector Financiero', icon: Landmark, desc: 'Seguridad y alta disponibilidad corporativa.' },
+    { name: 'Manufacturero / Industrial', icon: Cpu, desc: 'Redes de planta y automatización técnica.' },
+    { name: 'Educacional', icon: GraduationCap, desc: 'Campus inteligentes y seguridad académica.' },
+    { name: 'Comercial & Retail', icon: ShoppingBag, desc: 'Control de activos y sistemas de parking.' },
+    { name: 'Entidades Públicas', icon: Building2, desc: 'Infraestructura tecnológica para el sector público.' }
+  ];
 
   return (
     <div className="flex flex-col gap-0 overflow-x-hidden">
@@ -48,8 +64,8 @@ export default function Home() {
         )}>
           <div className="max-w-3xl mb-12 md:mb-20 text-center mx-auto">
             <h2 className="text-sm tracking-[0.2em] font-semibold text-primary uppercase mb-4">Especialidades</h2>
-            <h3 className="text-2xl sm:text-3xl md:text-5xl font-light text-foreground tracking-tight leading-tight text-balance">
-              Diseño, implementación y certificación de <span className="font-semibold text-primary">sistemas técnicos</span>.
+              <h3 className="text-2xl sm:text-3xl md:text-5xl font-light text-foreground tracking-tight leading-tight text-balance">
+              Diseño, implementación y gestión de <span className="font-semibold text-primary">soluciones integrales</span>.
             </h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -76,7 +92,7 @@ export default function Home() {
                      <div className="mb-6 inline-flex p-3 rounded-xl bg-primary/5 text-primary">
                         <service.icon className="h-6 w-6" />
                      </div>
-                     <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">{service.title}</h3>
+                     <h2 className="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">{service.title}</h2>
                      <p className="text-muted-foreground leading-relaxed text-sm font-light mb-8 line-clamp-3">
                        {service.description}
                      </p>
@@ -87,6 +103,12 @@ export default function Home() {
                 </Card>
               </Link>
             ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <Button asChild size="lg" variant="outline" className="rounded-full px-10 border-primary/20 text-primary hover:bg-primary/5">
+              <Link href="/services">Ver todas las especialidades</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -113,7 +135,7 @@ export default function Home() {
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 md:p-12 z-20">
                 <div className="text-white border-l-4 border-accent pl-4 md:pl-6">
                   <p className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-1 md:mb-2 drop-shadow-md">Ingeniería en Comunicaciones S.A.</p>
-                  <p className="text-white/80 font-medium tracking-wide text-base md:text-lg">La columna vertebral de la industria</p>
+                  <p className="text-white/80 font-medium tracking-wide text-base md:text-lg">Más de 25 años de experiencia</p>
                 </div>
               </div>
             </div>
@@ -125,12 +147,12 @@ export default function Home() {
               <div>
                 <h2 className="text-sm tracking-[0.2em] font-semibold text-primary uppercase mb-4">Identidad Corporativa</h2>
                 <h3 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-headline font-light text-foreground tracking-tight leading-tight text-balance">
-                  El motor tecnológico del <span className="font-semibold text-primary">quehacer nacional</span>.
+                  Socio estratégico en <span className="font-semibold text-primary">infraestructura crítica</span>.
                 </h3>
               </div>
               
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
-                En <strong className="font-medium text-foreground">Ingeniería en Comunicaciones S.A.</strong> diseñamos y certificamos las instalaciones más críticas del país. Aseguramos que su infraestructura sea el motor, y no el obstáculo, de su crecimiento.
+                ICSA es una empresa especializada en soluciones integrales de redes de energía eléctrica, telecomunicaciones, cableado estructurado, CCTV, seguridad y telefonía digital con más de 25 años en el mercado.
               </p>
               
               <div className="grid sm:grid-cols-2 gap-8 pt-8 border-t border-black/5">
@@ -138,7 +160,7 @@ export default function Home() {
                     <h4 className="font-bold text-lg text-foreground flex items-center gap-3"><CheckCircle className="h-6 w-6 text-accent shrink-0"/> Ingeniería Certificada</h4>
                  </div>
                  <div>
-                    <h4 className="font-bold text-lg text-foreground flex items-center gap-3"><CheckCircle className="h-6 w-6 text-primary shrink-0"/> Logística Operativa</h4>
+                    <h4 className="font-bold text-lg text-foreground flex items-center gap-3"><CheckCircle className="h-6 w-6 text-primary shrink-0"/> Compromiso con Calidad</h4>
                  </div>
               </div>
             </div>
@@ -166,11 +188,11 @@ export default function Home() {
           metricsVisible && "reveal-visible"
         )}>
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-headline font-light mb-12 tracking-tight text-balance">
-               Infraestructura confiable, <span className="font-semibold text-accent">resultados medibles</span>.
+               Soluciones tecnológicas para <span className="font-semibold text-accent">metas reales</span>.
             </h2>
             <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-0 max-w-5xl mx-auto mb-16">
                <div className="flex-1 flex flex-col items-center justify-center p-6 w-full md:border-r border-white/10">
-                  <span className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-3 tracking-tighter">15+</span>
+                  <span className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-3 tracking-tighter">25+</span>
                   <span className="text-sm text-white/50 uppercase tracking-widest font-semibold">Años de Exp.</span>
                </div>
                <div className="flex-1 flex flex-col items-center justify-center p-6 w-full md:border-r border-white/10">
@@ -178,8 +200,8 @@ export default function Home() {
                   <span className="text-sm text-white/50 uppercase tracking-widest font-semibold">Proyectos</span>
                </div>
                <div className="flex-1 flex flex-col items-center justify-center p-6 w-full">
-                  <span className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-3 tracking-tighter">100%</span>
-                  <span className="text-sm text-white/50 uppercase tracking-widest font-semibold">Certificados</span>
+                  <span className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-3 tracking-tighter">100+</span>
+                  <span className="text-sm text-white/50 uppercase tracking-widest font-semibold">Clientes</span>
                </div>
             </div>
             <p className="text-lg text-white/70 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
@@ -188,6 +210,34 @@ export default function Home() {
             <Button asChild size="lg" className="bg-accent text-accent-foreground font-semibold rounded-full px-10 hover:bg-accent/90 shadow-lg transition-transform hover:-translate-y-1">
                <Link href="#contacto">Hablemos de su proyecto</Link>
             </Button>
+        </div>
+      </section>
+
+      {/* Strategic Sectors Section */}
+      <section ref={sectorsRef} className="py-24 bg-foreground text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none"></div>
+        <div className={cn(
+          "container mx-auto px-6 md:px-12 relative z-10 reveal-base reveal-up",
+          sectorsVisible && "reveal-visible"
+        )}>
+          <div className="max-w-3xl mb-16 text-center mx-auto">
+            <h2 className="text-sm tracking-[0.2em] font-semibold text-accent uppercase mb-4">Alcance Operacional</h2>
+            <h3 className="text-3xl md:text-5xl font-headline font-light tracking-tight text-balance">
+              Sectores <span className="font-semibold text-accent">Estratégicos</span> que Atendemos.
+            </h3>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {sectors.map((sector, idx) => (
+              <div key={idx} className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 group">
+                <div className="mb-6 inline-flex p-3 rounded-xl bg-accent/10 text-accent group-hover:scale-110 transition-transform">
+                  <sector.icon className="h-6 w-6" />
+                </div>
+                <h4 className="text-xl font-bold mb-3">{sector.name}</h4>
+                <p className="text-white/60 text-sm font-light leading-relaxed">{sector.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -321,8 +371,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Oficina Central</h4>
-                    <p className="text-sm text-muted-foreground font-light">Abel González 324.</p>
-                    <p className="text-sm text-muted-foreground font-light">La Cisterna Santiago, Chile</p>
+                    <p className="text-sm text-muted-foreground font-light">Santiago, Chile</p>
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
@@ -331,8 +380,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Línea Directa</h4>
-                    <p className="text-sm text-muted-foreground font-light">+56 2 2345 6789</p>
-                    <p className="text-sm text-muted-foreground font-light">+56 9 1234 5678</p>
+                    <p className="text-sm text-muted-foreground font-light">+56 9 9532 9205</p>
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
@@ -341,8 +389,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Correos</h4>
-                    <p className="text-sm text-muted-foreground font-light">proyectos@icsa.cl</p>
-                    <p className="text-sm text-muted-foreground font-light">ventas@icsa.cl</p>
+                    <p className="text-sm text-muted-foreground font-light">aalvarado@icsaingenieria.cl</p>
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">

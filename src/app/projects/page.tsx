@@ -6,36 +6,60 @@ import { Badge } from '@/components/ui/badge';
 
 const projects = [
   {
-    id: 'p1',
-    title: 'Infraestructura Bancaria',
-    location: 'Centro Financiero, Santiago',
-    category: 'Cabling & Networking',
-    image: 'project-cabling',
-    description: 'Implementación completa de cableado estructurado categoría 6A para 350 puestos de trabajo y certificación de red.'
+    id: 'entel',
+    title: 'Proyecto ENTEL',
+    location: 'Datacenters (RM)',
+    category: 'Fibra Óptica & Cobre',
+    image: 'project-entel',
+    description: 'Planificación, coordinación y ejecución de cableado estructurado en datacenters críticos: Amunátegui, Ciudad de los Valles, Longovilo, Pedro de Valdivia y Ñuñoa.'
   },
   {
-    id: 'p2',
-    title: 'Centro Logístico Inteligente',
-    location: 'Sector Industrial, Quilicura',
+    id: 'mall-plaza',
+    title: 'Proyecto Mall Plaza',
+    location: 'Cobertura Nacional',
     category: 'Seguridad & CCTV',
     image: 'project-security',
-    description: 'Instalación de sistema de videovigilancia IP con más de 80 cámaras y central de monitoreo unificada.'
+    description: 'Mantenimiento correctivo y preventivo de sistemas CCTV, control centralizado y soluciones tecnológicas para estacionamientos a nivel nacional.'
   },
   {
-    id: 'p3',
-    title: 'Data Center Corporativo',
-    location: 'Providencia',
+    id: 'gm',
+    title: 'Proyecto General Motors',
+    location: 'Edificio Tech Center',
+    category: 'Networking & CCTV',
+    image: 'project-gm',
+    description: 'Implementación de red LAN, backbone de fibra óptica, switches y sistemas de videovigilancia para el centro tecnológico corporativo.'
+  },
+  {
+    id: 'javiera-carrera',
+    title: 'Colegio Javiera Carrera',
+    location: 'Santiago',
+    category: 'Conectividad & CCTV',
+    image: 'project-javiera',
+    description: 'Red con balanceo y respaldo de internet, 51 switches, red WiFi con 51 APs y 134 puntos de usuario en categoría 6A.'
+  },
+  {
+    id: 'trendy',
+    title: 'Proyecto Trendy',
+    location: 'Plantas Industriales',
+    category: 'Wireless & Fibra',
+    image: 'project-trendy',
+    description: 'Instalación de Access Points para ambientes de frío extremo, monitoreo remoto, enlaces de fibra óptica y redes eléctricas exclusivas.'
+  },
+  {
+    id: 'subus',
+    title: 'Proyecto SUBUS',
+    location: 'Terminales RM',
+    category: 'Ingeniería & Seguridad',
+    image: 'project-subus',
+    description: 'Ingeniería e implementación de CCTV para terminales de buses, incluyendo energía estabilizada, obras civiles y centros de control.'
+  },
+  {
+    id: 'umce',
+    title: 'Proyecto UMCE',
+    location: 'Campus Universitario',
     category: 'Infraestructura TI',
-    image: 'project-datacenter',
-    description: 'Diseño y montaje de sala de servidores con redundancia eléctrica, sistemas UPS y climatización de precisión.'
-  },
-  {
-    id: 'p4',
-    title: 'Planta Industrial',
-    location: 'Lampa',
-    category: 'Eléctrica',
-    image: 'project-electrical',
-    description: 'Estudio de instalaciones eléctricas y diseño de tableros de fuerza para nueva línea de producción automatizada.'
+    image: 'project-umce',
+    description: 'Desarrollo de backbone de fibra óptica, canalización subterránea, obras civiles, fusiones y certificación reflectométrica.'
   }
 ];
 
