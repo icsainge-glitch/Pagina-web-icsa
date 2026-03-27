@@ -61,6 +61,12 @@
       "imageHint": "general motors building"
     },
     {
+      "id": "project-mall-plaza",
+      "description": "Mall Plaza Mall Facility",
+      "imageUrl": "/project-mall-plaza.jpg",
+      "imageHint": "mall plaza building"
+    },
+    {
       "id": "project-entel",
       "description": "Entel Datacenter Infrastructure",
       "imageUrl": "/project-entel.jpg",
@@ -85,10 +91,10 @@
       "imageHint": "trendy brand"
     },
     {
-      "id": "project-javiera",
-      "description": "Colegio Javiera Carrera",
+      "id": "project-sanjavier",
+      "description": "Colegio San Javier",
       "imageUrl": "/project-javiera.jpg",
-      "imageHint": "javiera carrera school"
+      "imageHint": "san javier school"
     },
     {
       "id": "about-team",

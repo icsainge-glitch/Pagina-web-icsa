@@ -215,6 +215,16 @@ export default function Home() {
 
       {/* Strategic Sectors Section */}
       <section ref={sectorsRef} className="py-24 bg-foreground text-white relative overflow-hidden">
+        {/* Background Image with Dark Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000" 
+            alt="Corporate Infrastructure" 
+            fill 
+            className="object-cover brightness-[0.6] opacity-80" 
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/20 to-transparent"></div>
+        </div>
         <div className="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none"></div>
         <div className={cn(
           "container mx-auto px-6 md:px-12 relative z-10 reveal-base reveal-up",
@@ -321,6 +331,9 @@ export default function Home() {
                  <div className="w-[160px] h-20 relative flex-shrink-0">
                     <Image src="/clients/client5.jpg" alt="Salfa" fill className="object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mix-blend-multiply" />
                  </div>
+                 <div className="w-[160px] h-20 relative flex-shrink-0">
+                    <Image src="/clients/client6.png" alt="Entel" fill className="object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                 </div>
                </div>
                
                {/* Duplicated Set for Seamless Looping */}
@@ -339,6 +352,9 @@ export default function Home() {
                  </div>
                  <div className="w-[160px] h-20 relative flex-shrink-0">
                     <Image src="/clients/client5.jpg" alt="Salfa" fill className="object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mix-blend-multiply" />
+                 </div>
+                 <div className="w-[160px] h-20 relative flex-shrink-0">
+                    <Image src="/clients/client6.png" alt="Entel" fill className="object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
                  </div>
                </div>
              </div>
