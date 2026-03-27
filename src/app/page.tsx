@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { HeroCarousel } from '@/components/HeroCarousel';
+import { AnimatedCounter } from '@/components/AnimatedCounter';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -192,15 +193,21 @@ export default function Home() {
             </h2>
             <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-0 max-w-5xl mx-auto mb-16">
                <div className="flex-1 flex flex-col items-center justify-center p-6 w-full md:border-r border-white/10">
-                  <span className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-3 tracking-tighter">25+</span>
+                  <span className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-3 tracking-tighter">
+                    <AnimatedCounter end={25} trigger={metricsVisible} suffix="+" />
+                  </span>
                   <span className="text-sm text-white/50 uppercase tracking-widest font-semibold">Años de Exp.</span>
                </div>
                <div className="flex-1 flex flex-col items-center justify-center p-6 w-full md:border-r border-white/10">
-                  <span className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-3 tracking-tighter">500+</span>
+                  <span className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-3 tracking-tighter">
+                    <AnimatedCounter end={500} trigger={metricsVisible} suffix="+" />
+                  </span>
                   <span className="text-sm text-white/50 uppercase tracking-widest font-semibold">Proyectos</span>
                </div>
                <div className="flex-1 flex flex-col items-center justify-center p-6 w-full">
-                  <span className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-3 tracking-tighter">100+</span>
+                  <span className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-3 tracking-tighter">
+                    <AnimatedCounter end={100} trigger={metricsVisible} suffix="+" />
+                  </span>
                   <span className="text-sm text-white/50 uppercase tracking-widest font-semibold">Clientes</span>
                </div>
             </div>

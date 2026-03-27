@@ -41,7 +41,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex gap-2 items-start text-muted-foreground">
                 <MapPin className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                <span className="leading-tight">Santiago, Chile</span>
+                <span className="leading-tight">Abel Gonzalez 324, La Cisterna, Santiago, Chile</span>
               </li>
               <li className="flex gap-2 items-center text-muted-foreground">
                 <Phone className="h-5 w-5 text-accent shrink-0" />

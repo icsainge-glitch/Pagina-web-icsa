@@ -7,11 +7,6 @@ import { Button } from '@/components/ui/button';
 
 const HERO_DATA = [
   {
-    image: '/hero-industrial.png?v=5',
-    title: <>Arquitectos de su <span className="font-semibold text-accent">Continuidad Operativa</span></>,
-    description: "Diseñamos y certificamos la infraestructura tecnológica más crítica para el quehacer nacional, asegurando que su negocio no se detenga jamás."
-  },
-  {
     image: '/hero-icsa-office.jpg?v=4',
     title: <>Ingeniería de <span className="font-semibold text-accent">Alto Estándar</span></>,
     description: "Diseño y ejecución de infraestructuras críticas con precisión técnica. Garantizamos la solidez y eficiencia de cada proyecto."
@@ -20,6 +15,11 @@ const HERO_DATA = [
     image: '/hero-icsa-circuit.jpg?v=4',
     title: <>Excelencia en <span className="font-semibold text-accent">Certificación</span></>,
     description: "Especialistas en auditorías técnicas y cumplimiento de normativas internacionales. Garantizamos la máxima calidad en cada proyecto de ingeniería."
+  },
+  {
+    image: '/hero-industrial.png?v=5',
+    title: <>Arquitectos de su <span className="font-semibold text-accent">Continuidad Operativa</span></>,
+    description: "Diseñamos y certificamos la infraestructura tecnológica más crítica para el quehacer nacional, asegurando que su negocio no se detenga jamás."
   }
 ];
 
